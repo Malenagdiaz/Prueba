@@ -4,11 +4,217 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/4a256f10f3.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="tailwind.config.js"></script>
+  <title>Ahorradas</title>
 </head>
 
-<body>
+<body class="bg-[#edfffa]">
+  <header class="bg-[#84b6f4] ">
+    <nav class="flex justify-between items-center">
+      <div class="flex gap-4 ml-5 items-center">
+        <i class="fa-solid fa-money-check-dollar text-7xl text-[#005187] animate-spin-x"></i>
+        <h1 class="font-['Protest_Riot'] text-[#edfffa] text-5xl">AhorrADAs</h1>
+      </div>
+      <div>
+        <ul class="flex gap-11 mr-10">
+          <li>
+            <a href="#Balance"
+              class="font-['Protest_Riot'] text-[#edfffa] text-2xl inline-block p-2 transition-transform transform hover:scale-125">
+              <i class="fa-solid fa-chart-column mr-2 text-[#005187] text-2xl"></i>
+              Balance
+            </a>
+          </li>
+          <li>
+            <a href="#"
+              class="font-['Protest_Riot'] text-[#edfffa] text-2xl inline-block p-2 transition-transform transform hover:scale-125">
+              <i class="fa-solid fa-tags mr-2 text-[#005187] text-2xl"></i>
+              Categorías
+            </a>
+          </li>
+          <li>
+            <a href="#"
+              class="font-['Protest_Riot'] text-[#edfffa] text-2xl inline-block p-2 transition-transform transform hover:scale-125">
+              <i class="fa-solid fa-chart-pie mr-2 text-[#005187] text-2xl"></i>
+              Reportes
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section class="section mt-5 vista mb-6" id="Balance">
+      <div class="flex justify-center gap-10">
+        <div class="flex flex-col">
+          <div class="bg-[#c4dafa] p-6 rounded-lg mb-6">
+            <h2 class="font-['Protest_Riot'] text-3xl font-bold mb-6">Balance</h2>
+            <div class="flex flex-col text-lg">
+              <div class="flex items-center mb-2">
+                <span class="font-['Protest_Riot']">Ganancias</span>
+                <span class="font-['Protest_Riot'] ml-auto text-green-500">+$0</span>
+              </div>
+              <div class="flex items-center mb-2">
+                <span class="font-['Protest_Riot']">Gastos</span>
+                <span class="font-['Protest_Riot'] ml-auto text-red-500">-$0</span>
+              </div>
+              <div class="flex items-center">
+                <span class="font-['Protest_Riot']">Total</span>
+                <span class="font-['Protest_Riot'] ml-auto font-bold">$0</span>
+              </div>
+            </div>
+          </div>
+          <div class="bg-[#c4dafa] p-6 rounded-lg w-60">
+            <div class="flex justify-between items-center mb-6">
+              <h3 class="font-['Protest_Riot'] text-3xl font-bold">Filtros</h3>
+              <button class="font-['Protest_Riot'] text-[#005187] hover:text-[#84b6f4]">Ocultar
+                filtros</button>
+            </div>
+            <div id="filtros">
+              <div class="mb-4">
+                <label class="font-['Protest_Riot'] block text-lg mb-2" for="filtro-tipo">Tipo</label>
+                <select id="filtro-tipo" class="font-['Protest_Riot'] w-full h-10 rounded-lg">
+                  <option value="TODOS">Todos</option>
+                  <option value="GASTO">Gasto</option>
+                  <option value="GANANCIA">Ganancia</option>
+                </select>
+              </div>
+              <div class="mb-4">
+                <label class="font-['Protest_Riot'] block text-lg mb-2" for="filtro-categoria">Categoría</label>
+                <select id="filtro-categoria" class="font-['Protest_Riot'] w-full h-10 rounded-lg">
+                  <option>Servicios</option>
+                </select>
+              </div>
+              <div class="mb-4">
+                <label class="font-['Protest_Riot'] block text-lg mb-2" for="filtro-fecha">Desde</label>
+                <input type="date" id="filtro-fecha" class="font-['Protest_Riot'] w-full h-10 rounded-lg">
+              </div>
+              <div class="mb-4">
+                <label class="font-['Protest_Riot'] block text-lg mb-2" for="filtro-orden">Ordenar por</label>
+                <select id="filtro-orden" class="font-['Protest_Riot'] w-full h-10 rounded-lg">
+                  <option value="MAS_RECIENTES">Más reciente</option>
+                  <option value="MENOS_RECIENTES">Menos reciente</option>
+                  <option value="MAYOR_MONTO">Mayor monto</option>
+                  <option value="MENOR_MONTO">Menor monto</option>
+                  <option value="A/Z">A/Z</option>
+                  <option value="Z/A">Z/A</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
 
+        <div class="bg-[#c4dafa] p-6 rounded-lg w-7/12">
+          <div class="flex justify-between items-center mb-6">
+            <h3 class="font-['Protest_Riot'] text-3xl font-bold">Operaciones</h3>
+            <button type="button"
+              class="font-['Protest_Riot'] button bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">+ Nueva
+              operación</button>
+          </div>
+          <div id="con-operaciones" class="hidden">
+            <div class="font-['Protest_Riot'] grid grid-cols-5 gap-4 text-lg font-semibold mb-4">
+              <div>Descripción</div>
+              <div>Categoría</div>
+              <div class="text-right">Fecha</div>
+              <div class="text-right">Monto</div>
+              <div class="text-right">Acciones</div>
+            </div>
+            <div id="operaciones"></div>
+          </div>
+          <div class="text-center">
+            <img src="./Imagenes/balance.svg" class="mb-4 w-full" alt="balance">
+            <h4 class="font-['Protest_Riot'] text-2xl font-semibold mb-2">Sin resultados</h4>
+            <p class="font-['Protest_Riot']">Cambia los filtros o agrega operaciones</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="bg-blue-500">
+    <div class="flex overflow-hidden">
+      <div class="flex animate-scroll gap-10">
+        <div class="flex animate-scroll">
+          <span>Hecho con 🤍 por WebWiseWoman</span>
+        </div>
+        <div class="flex animate-scroll">
+          <p>Malena</p>
+        </div>
+        <div class="flex animate-scroll">
+          <span><i class="fa-brands fa-github"></i></span>
+          <a href="https://github.com/">https://github.com/</a>
+        </div>
+        <div class="flex animate-scroll">
+          <span><i class="fa-brands fa-linkedin"></i></span>
+          <a href="https://linkedin.com/">https://linkedin.com/</a>
+        </div>
+        <div class="flex animate-scroll">
+          <p>Lucia</p>
+        </div>
+        <div class="flex animate-scroll">
+          <i class="fa-brands fa-linkedin"></i>
+          <a href="https://linkedin.com/">https://linkedin.com/</a>
+        </div>
+        <div class="flex animate-scroll">
+          <span><i class="fa-brands fa-github"></i></span>
+          <a href="https://github.com/">https://github.com/</a>
+        </div>
+        <div class="flex animate-scroll">
+          <span>Hecho con 🤍 por WebWiseWoman</span>
+        </div>
+        <div class="flex animate-scroll">
+          <p>Malena</p>
+        </div>
+        <div class="flex animate-scroll">
+          <span><i class="fa-brands fa-github"></i></span>
+          <a href="https://github.com/">https://github.com/</a>
+        </div>
+        <div class="flex animate-scroll">
+          <span><i class="fa-brands fa-linkedin"></i></span>
+          <a href="https://linkedin.com/">https://linkedin.com/</a>
+        </div>
+        <div class="flex animate-scroll">
+          <p>Lucia</p>
+        </div>
+        <div class="flex animate-scroll">
+          <i class="fa-brands fa-linkedin"></i>
+          <a href="https://linkedin.com/">https://linkedin.com/</a>
+        </div>
+        <div class="flex animate-scroll">
+          <span><i class="fa-brands fa-github"></i></span>
+          <a href="https://github.com/">https://github.com/</a>
+        </div>
+        <div class="flex animate-scroll">
+          <span>Hecho con 🤍 por WebWiseWoman</span>
+        </div>
+        <div class="flex animate-scroll">
+          <p>Malena</p>
+        </div>
+        <div class="flex animate-scroll">
+          <span><i class="fa-brands fa-github"></i></span>
+          <a href="https://github.com/">https://github.com/</a>
+        </div>
+        <div class="flex animate-scroll">
+          <span><i class="fa-brands fa-linkedin"></i></span>
+          <a href="https://linkedin.com/">https://linkedin.com/</a>
+        </div>
+        <div class="flex animate-scroll">
+          <p>Lucia</p>
+        </div>
+        <div class="flex animate-scroll">
+          <i class="fa-brands fa-linkedin"></i>
+          <a href="https://linkedin.com/">https://linkedin.com/</a>
+        </div>
+        <div class="flex animate-scroll">
+          <span><i class="fa-brands fa-github"></i></span>
+          <a href="https://github.com/">https://github.com/</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 </body>
 
 </html>
