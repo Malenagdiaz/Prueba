@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,10 +24,17 @@
       <div>
         <ul class="flex gap-11 mr-10">
           <li>
-            <a href="#Balance"
-              class="font-['Protest_Riot'] text-[#edfffa] text-2xl inline-block p-2 transition-transform transform hover:scale-125">
-              <i class="fa-solid fa-chart-column mr-2 text-[#005187] text-2xl"></i>
-              Balance
+            <a href="#"
+              class="inline-block relative p-10 text-white overflow-hidden text-2xl transition-all hover:bg-purple-800 hover:delay-75">
+              <span
+                class="absolute block top-0 left-[-100%] w-full h-1 bg-gradient-to-r from-purple-500 to-purple-700 hover:left-full hover:transition"></span>
+              <span
+                class="absolute block top-[-100%] right-0 w-1 h-full bg-gradient-to-r fro to-purple-700 hover:top-full hover:transition hover:delay-75"></span>
+              <span
+                class="absolute block bottom-0 right-[-100%] w-full h-1 bg-gradient-to-r from-transparent to-purple-700 hover:right-full hover:transition hover:delay-75"></span>
+              <span
+                class="absolute block bottom-[-100%] left-0 w-1 h-full bg-gradient-to-r from-transparent to-purple-700 hover:bottom-full hover:transition hover:delay-75"></span>
+              Categorías
             </a>
           </li>
           <li>
@@ -59,6 +67,7 @@
                 <span class="font-['Protest_Riot'] ml-auto text-green-500">+$0</span>
               </div>
               <div class="flex items-center mb-2">
+                <!-- REEMPLAZAR POR ETIQUETA P -->
                 <span class="font-['Protest_Riot']">Gastos</span>
                 <span class="font-['Protest_Riot'] ml-auto text-red-500">-$0</span>
               </div>
@@ -115,7 +124,7 @@
               class="font-['Protest_Riot'] button bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">+ Nueva
               operación</button>
           </div>
-          <div id="con-operaciones" class="hidden">
+          <div id="" class="hidden">
             <div class="font-['Protest_Riot'] grid grid-cols-5 gap-4 text-lg font-semibold mb-4">
               <div>Descripción</div>
               <div>Categoría</div>
@@ -134,8 +143,8 @@
       </div>
     </section>
   </main>
-  <footer class="bg-blue-500">
-    <div class="flex overflow-hidden">
+  <footer class="bg-blue-500 bg-opacity-5 h-[5vh] flex items-center">
+    <div class="flex overflow-hidden text-nowrap text-black z-20">
       <div class="flex animate-scroll gap-10">
         <div class="flex animate-scroll">
           <span>Hecho con 🤍 por WebWiseWomen</span>
